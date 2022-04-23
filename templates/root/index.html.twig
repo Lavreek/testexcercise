@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block header %}
+	{{ include('root/assets/header.html') }}
+{% endblock %}
+
+{% block main %}
+	{{ include('root/assets/main.html') }}
+{% endblock %}
+
+{% block footer %}
+	{{ include('root/assets/footer.html') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="build/ajax-form.js"></script>
+{% endblock %}

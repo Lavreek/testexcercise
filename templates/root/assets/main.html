@@ -1,0 +1,59 @@
+<main style="min-height: 75vh;">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for product in products %}
+                {{ placeCards(product) }}
+            {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="open-modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="AddCards" tabindex="-1" aria-labelledby="AddCardsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AddCardsLabel">Добавить карточку</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="ajaxformcreate" action="" >
+                    <div class="mb-3">
+                        <label for="InputHeader" class="form-label">Заголовок</label>
+                        <input class="form-control" type="text" name="header" id="InputHeader" placeholder="Заголовок"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputDescription" class="form-label">Описание</label>
+                        <input class="form-control" type="text" name="bodydescription" id="InputDescription" placeholder="Описание карточки"/>
+                    </div>
+                    <div class="py-3 row justify-content-center">
+                        <div class="col-md-auto">
+                            <input class="btn btn-primary save-new-card" type="button" value="Отправить"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div> 
+</div>
+
+</main>
